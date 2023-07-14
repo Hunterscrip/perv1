@@ -1,16 +1,5 @@
 #!/bin/bash
-function CEKIP () {
-MYIP=$(curl -sS ipv4.icanhazip.com)
-IZIN=$(curl -sS https://raw.githubusercontent.com/casper9/permission/main/ipmini | awk '{print $4}' | grep $MYIP)
-if [ "$MYIP" = "$IZIN" ]; then
-  domain
-  Casper2
-else
-  Casper1
-  domain
-  Casper2
-fi
-}
+
 clear
 red='\e[1;31m'
 green='\e[0;32m'
@@ -98,7 +87,7 @@ fun_bar() {
     tput cnorm
 }
 res1() {
-wget https://raw.githubusercontent.com/casper9/permission/main/ipmini
+wget https://raw.githubusercontent.com/Hunterscrip/izinvps/main/ip
 
 }
 res2() {
@@ -110,7 +99,7 @@ git push -f https://${APIGIT}@github.com/${USERGIT}/permission &> /dev/null
 sleep 1
 }
 res3() {
-wget https://raw.githubusercontent.com/casper9/perv1/main/install/casper.sh && chmod +x casper.sh && ./casper.sh
+wget https://raw.githubusercontent.com/Hunterscrip/perv1/main/install/casper.sh && chmod +x casper.sh && ./casper.sh
 clear
 }
 
