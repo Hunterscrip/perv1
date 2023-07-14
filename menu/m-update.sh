@@ -1,5 +1,4 @@
 #!/bin/bash
-MYIP=$(wget -qO- ipinfo.io/ip);
 
 clear
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
@@ -56,21 +55,21 @@ wget -O /usr/bin/m-sshws "https://raw.githubusercontent.com/Hunterscrip/perv1/ma
 wget -O /usr/bin/m-webmin "https://raw.githubusercontent.com/Hunterscrip/perv1/main/menu/m-webmin.sh" && chmod +x /usr/bin/m-webmin
 wget -O /usr/bin/running "https://raw.githubusercontent.com/Hunterscrip/perv1/main/menu/running.sh" && chmod +x /usr/bin/running
 wget -O /usr/bin/m-domain "https://raw.githubusercontent.com/Hunterscrip/perv1/main/menu/m-domain.sh" && chmod +x /usr/bin/m-domain
-wget -O /usr/bin/bw "https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/menu/bw.sh" && chmod +x /usr/bin/bw
-wget -O /usr/bin/m-tcp "https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/menu/tcp.sh" && chmod +x /usr/bin/m-tcp
-wget -O /usr/bin/auto-reboot "https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/menu/auto-reboot.sh" && chmod +x /usr/bin/auto-reboot
-wget -O /usr/bin/clearcache "https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/menu/clearcache.sh" && chmod +x /usr/bin/clearcache
-wget -O /usr/bin/restart "https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/menu/restart.sh" && chmod +x /usr/bin/restart
-wget -O /usr/bin/m-update "https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/menu/m-update.sh" && chmod +x /usr/bin/m-update
-wget -O /usr/bin/api "https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/api" && chmod +x /usr/bin/api
-wget -O /usr/bin/bot1 "https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/menu/bot1.sh" && chmod +x /usr/bin/bot1
-wget -O /usr/bin/certv2ray "https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/xray/certv2ray.sh" && chmod +x /usr/bin/certv2ray
-wget -O /usr/bin/installer "https://raw.githubusercontent.com/Tarap-Kuhing/Profile/main/installer.sh" && chmod +x /usr/bin/installer
-wget -O /usr/bin/bot "https://raw.githubusercontent.com/Tarap-Kuhing/Profile/main/bot.sh" && chmod +x /usr/bin/bot
-wget -O /usr/bin/installsl "https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/slowdns/installsl.sh" && chmod +x /usr/bin/installsl
-wget -O /usr/bin/status "https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/status" && chmod +x /usr/bin/status
-wget -O /usr/bin/versi "https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/versi" && chmod +x /usr/bin/versi
-wget -O /usr/bin/bot3 "https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/menu/bot3" && chmod +x /usr/bin/bot3
+wget -O /usr/bin/bw "https://raw.githubusercontent.com/Hunterscrip/perv1/main/menu/bw.sh" && chmod +x /usr/bin/bw
+wget -O /usr/bin/m-tcp "https://raw.githubusercontent.com/Hunterscrip/perv1/main/menu/tcp.sh" && chmod +x /usr/bin/m-tcp
+wget -O /usr/bin/auto-reboot "https://raw.githubusercontent.com/Hunterscrip/perv1/main/menu/auto-reboot.sh" && chmod +x /usr/bin/auto-reboot
+wget -O /usr/bin/clearcache "https://raw.githubusercontent.com/Hunterscrip/perv1/main/menu/clearcache.sh" && chmod +x /usr/bin/clearcache
+wget -O /usr/bin/restart "https://raw.githubusercontent.com/Hunterscrip/perv1/main/menu/restart.sh" && chmod +x /usr/bin/restart
+wget -O /usr/bin/m-update "https://raw.githubusercontent.com/Hunterscrip/perv1/main/menu/m-update.sh" && chmod +x /usr/bin/m-update
+wget -O /usr/bin/api "https://raw.githubusercontent.com/Hunterscrip/perv1/main/api" && chmod +x /usr/bin/api
+wget -O /usr/bin/bot1 "https://raw.githubusercontent.com/Hunterscrip/perv1/main/menu/bot1.sh" && chmod +x /usr/bin/bot1
+wget -O /usr/bin/certv2ray "https://raw.githubusercontent.com/Tarap-Kuhing/perv1/main/xray/certv2ray.sh" && chmod +x /usr/bin/certv2ray
+wget -O /usr/bin/installer "https://raw.githubusercontent.com/Hunterscrip/perv1/main/menu/installer.sh" && chmod +x /usr/bin/installer
+wget -O /usr/bin/bot "https://raw.githubusercontent.com/Hunterscrip/perv1/main/menu/bot.sh" && chmod +x /usr/bin/bot
+wget -O /usr/bin/installsl "https://raw.githubusercontent.com/Hunterscrip/perv1/main/slowdns/installsl.sh" && chmod +x /usr/bin/installsl
+wget -O /usr/bin/status "https://raw.githubusercontent.com/Hunterscrip/perv1/main/status" && chmod +x /usr/bin/status
+wget -O /usr/bin/versi "https://raw.githubusercontent.com/Hunterscrip/perv1/main/versi" && chmod +x /usr/bin/versi
+wget -O /usr/bin/bot3 "https://raw.githubusercontent.com/Hunterscrip/perv1/main/menu/bot3" && chmod +x /usr/bin/bot3
 
 chmod +x ohp
 chmod +x menu
