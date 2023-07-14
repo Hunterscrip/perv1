@@ -1,26 +1,6 @@
 #!/bin/bash
 MYIP=$(wget -qO- ipinfo.io/ip);
-echo "Checking VPS"
-CEKEXPIRED () {
-    today=$(date -d +1day +%Y-%m-%d)
-    Exp1=$(curl -sS https://raw.githubusercontent.com/kuhing/ip/main/vps | grep $MYIP | awk '{print $3}')
-    if [[ $today < $Exp1 ]]; then
-    echo -e "\e[32mSTATUS SCRIPT AKTIF...\e[0m"
-    else
-    echo -e "\e[31mSCRIPT ANDA EXPIRED!\e[0m";
 
-    exit 0
-fi
-}
-IZIN=$(curl -sS https://raw.githubusercontent.com/kuhing/ip/main/vps | awk '{print $4}' | grep $MYIP)
-if [ $MYIP = $IZIN ]; then
-echo -e "\e[32mPermission Accepted...\e[0m"
-CEKEXPIRED
-else
-echo -e "\e[31mPermission Denied!\e[0m";
-
-exit 0
-fi
 clear
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
@@ -63,19 +43,19 @@ rm -rf bot3
 # download menu
 cd /usr/bin
 
-wget -O /usr/bin/ohp "https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/sshws/ohp.sh" && chmod +x /usr/bin/ohp
-wget -O /usr/bin/menu "https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/menu/menu.sh" && chmod +x /usr/bin/menu
-wget -O /usr/bin/m-vmess "https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/menu/m-vmess.sh" && chmod +x /usr/bin/m-vmess
-wget -O /usr/bin/m-vless "https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/menu/m-vless.sh" && chmod +x /usr/bin/m-vless
-wget -O /usr/bin/m-trojan "https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/menu/m-trojan.sh" && chmod +x /usr/bin/m-trojan
-wget -O /usr/bin/m-ssws "https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/menu/m-ssws.sh" && chmod +x /usr/bin/m-ssws
-wget -O /usr/bin/m-system "https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/menu/m-system.sh" && chmod +x /usr/bin/m-system
-wget -O /usr/bin/m-theme "https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/menu/m-theme.sh" && chmod +x /usr/bin/m-theme
-wget -O /usr/bin/m-sshovpn "https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/menu/m-sshovpn.sh" && chmod +x /usr/bin/m-sshovpn
-wget -O /usr/bin/m-sshws "https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/menu/m-ssws.sh" && chmod +x /usr/bin/m-ssws
-wget -O /usr/bin/m-webmin "https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/menu/m-webmin.sh" && chmod +x /usr/bin/m-webmin
-wget -O /usr/bin/running "https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/menu/running.sh" && chmod +x /usr/bin/running
-wget -O /usr/bin/m-domain "https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/menu/m-domain.sh" && chmod +x /usr/bin/m-domain
+wget -O /usr/bin/ohp "https://raw.githubusercontent.com/Hunterscrip/perv1/main/sshws/ohp.sh" && chmod +x /usr/bin/ohp
+wget -O /usr/bin/menu "https://raw.githubusercontent.com/Hunterscrip/perv1/main/menu/menu.sh" && chmod +x /usr/bin/menu
+wget -O /usr/bin/m-vmess "https://raw.githubusercontent.com/Hunterscrip/perv1/main/menu/m-vmess.sh" && chmod +x /usr/bin/m-vmess
+wget -O /usr/bin/m-vless "https://raw.githubusercontent.com/Hunterscrip/perv1/main/menu/m-vless.sh" && chmod +x /usr/bin/m-vless
+wget -O /usr/bin/m-trojan "https://raw.githubusercontent.com/Hunterscrip/perv1/main/menu/m-trojan.sh" && chmod +x /usr/bin/m-trojan
+wget -O /usr/bin/m-ssws "https://raw.githubusercontent.com/Hunterscrip/perv1/main/menu/m-ssws.sh" && chmod +x /usr/bin/m-ssws
+wget -O /usr/bin/m-system "https://raw.githubusercontent.com/Hunterscrip/perv1/main/menu/m-system.sh" && chmod +x /usr/bin/m-system
+wget -O /usr/bin/m-theme "https://raw.githubusercontent.com/Hunterscrip/perv1/main/menu/m-theme.sh" && chmod +x /usr/bin/m-theme
+wget -O /usr/bin/m-sshovpn "https://raw.githubusercontent.com/Hunterscrip/perv1/main/menu/m-sshovpn.sh" && chmod +x /usr/bin/m-sshovpn
+wget -O /usr/bin/m-sshws "https://raw.githubusercontent.com/Hunterscrip/perv1/main/menu/m-ssws.sh" && chmod +x /usr/bin/m-ssws
+wget -O /usr/bin/m-webmin "https://raw.githubusercontent.com/Hunterscrip/perv1/main/menu/m-webmin.sh" && chmod +x /usr/bin/m-webmin
+wget -O /usr/bin/running "https://raw.githubusercontent.com/Hunterscrip/perv1/main/menu/running.sh" && chmod +x /usr/bin/running
+wget -O /usr/bin/m-domain "https://raw.githubusercontent.com/Hunterscrip/perv1/main/menu/m-domain.sh" && chmod +x /usr/bin/m-domain
 wget -O /usr/bin/bw "https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/menu/bw.sh" && chmod +x /usr/bin/bw
 wget -O /usr/bin/m-tcp "https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/menu/tcp.sh" && chmod +x /usr/bin/m-tcp
 wget -O /usr/bin/auto-reboot "https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/menu/auto-reboot.sh" && chmod +x /usr/bin/auto-reboot
