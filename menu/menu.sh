@@ -1,78 +1,4 @@
 #!/bin/bash
-dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
-biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
-###########- COLOR CODE -##############
-colornow=$(cat /etc/kuhing/theme/color.conf)
-export NC="\e[0m"
-export YELLOW='\033[0;33m';
-export RED="\033[0;31m"
-export COLOR1="$(cat /etc/kuhing/theme/$colornow | grep -w "TEXT" | cut -d: -f2|sed 's/ //g')"
-export COLBG1="$(cat /etc/kuhing/theme/$colornow | grep -w "BG" | cut -d: -f2|sed 's/ //g')"
-WH='\033[1;37m'
-###########- END COLOR CODE -##########
-tram=$( free -h | awk 'NR==2 {print $2}' )
-uram=$( free -h | awk 'NR==2 {print $3}' )
-ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
-CITY=$(curl -s ipinfo.io/city )
-
-
-BURIQ () {
-    curl -sS https://raw.githubusercontent.com/kuhing/ip/main/vps > /root/tmp
-    data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
-    for user in "${data[@]}"
-    do
-    exp=( `grep -E "^### $user" "/root/tmp" | awk '{print $3}'` )
-    d1=(`date -d "$exp" +%s`)
-    d2=(`date -d "$biji" +%s`)
-    exp2=$(( (d1 - d2) / 86400 ))
-    if [[ "$exp2" -le "0" ]]; then
-    echo $user > /etc/.$user.ini
-    else
-    rm -f /etc/.$user.ini > /dev/null 2>&1
-    fi
-    done
-    rm -f /root/tmp
-}
-
-MYIP=$(curl -sS ipv4.icanhazip.com)
-Name=$(curl -sS https://raw.githubusercontent.com/kuhing/ip/main/vps | grep $MYIP | awk '{print $2}')
-Isadmin=$(curl -sS https://raw.githubusercontent.com/kuhing/ip/main/vps | grep $MYIP | awk '{print $5}')
-echo $Name > /usr/local/etc/.$Name.ini
-CekOne=$(cat /usr/local/etc/.$Name.ini)
-
-Bloman () {
-if [ -f "/etc/.$Name.ini" ]; then
-CekTwo=$(cat /etc/.$Name.ini)
-    if [ "$CekOne" = "$CekTwo" ]; then
-        res="Expired"
-    fi
-else
-res="Permission Accepted..."
-fi
-}
-
-PERMISSION () {
-    MYIP=$(curl -sS ipv4.icanhazip.com)
-    IZIN=$(curl -sS https://raw.githubusercontent.com/kuhing/ip/main/vps | awk '{print $4}' | grep $MYIP)
-    if [ "$MYIP" = "$IZIN" ]; then
-    Bloman
-    else
-    res="Permission Denied!"
-    fi
-    BURIQ
-}
-
-x="ok"
-
-
-PERMISSION
-
-if [ "$res" = "Expired" ]; then
-Exp="\e[36mExpired\033[0m"
-rm -f /home/needupdate > /dev/null 2>&1
-else
-Exp=$(curl -sS https://raw.githubusercontent.com/kuhing/ip/main/vps | grep $MYIP | awk '{print $3}')
-fi
 export RED='\033[0;31m'
 export GREEN='\033[0;32m'
 DATEVPS=$(date +'%d/%m/%Y')
@@ -151,7 +77,7 @@ Info="${Green_font_prefix}(Registered)${Font_color_suffix}"
 Error="${Green_font_prefix}${Font_color_suffix}${Red_font_prefix}[EXPIRED]${Font_color_suffix}"
 
 today=$(date -d "0 days" +"%Y-%m-%d")
-Exp1=$(curl https://raw.githubusercontent.com/kuhing/ip/main/vps | grep $MYIP | awk '{print $4}')
+Exp1=$(curl https://raw.githubusercontent.com/Hunterscrip/izinvps/main/ip | grep $MYIP | awk '{print $4}')
 if [[ $today < $Exp1 ]]; then
     sts="${Info}"
 else
@@ -174,25 +100,25 @@ echo -e "$COLOR1└────────────────────�
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC}  $COLOR1[INFO]${NC} Check for Script updates"
 sleep 2
-wget -q -O /root/install_up.sh "https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/menu/install-up.sh" && chmod +x /root/install_up.sh
+wget -q -O /root/install_up.sh "https://raw.githubusercontent.com/Hunterscrip/perv1/main/menu/install-up.sh" && chmod +x /root/install_up.sh
 sleep 2
 ./install_up.sh
 sleep 5
 rm /root/install_up.sh
 rm /opt/.ver
-version_up=$( curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/versi )
+version_up=$( curl -sS https://raw.githubusercontent.com/Hunterscrip/perv1/main/versi )
 echo "$version_up" > /opt/.ver
 echo -e "$COLOR1 ${NC}  $COLOR1[INFO]${NC} Successfully Up To Date!"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}              ${WH}• TARAP KUHING •${NC}                $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}              ${WH}• R•${NC}                $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo ""
 read -n 1 -s -r -p "  Press any key to back on menu"
 menu
 }
 clear
-status=$( curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/status )
+status=$( curl -sS https://raw.githubusercontent.com/Hunterscrip/perv1/main/status )
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC} ${COLBG1}               ${WH}• MENU PANEL VPS •              ${NC} $COLOR1 $NC"
 echo -e "$COLOR1 ${NC} ${COLBG1}                  ${WH}• PREMIUM •                  ${NC} $COLOR1 $NC"
@@ -203,7 +129,7 @@ upminutes=`uptime -p | awk '{print $4,$5}' | cut -d , -f1`
 uptimecek=`uptime -p | awk '{print $6,$7}' | cut -d , -f1`
 cekup=`uptime -p | grep -ow "day"`
 IPVPS=$(curl -s ipinfo.io/ip )
-serverV=$( curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/versi )
+serverV=$( curl -sS https://raw.githubusercontent.com/Hunterscrip/perv1/main/versi )
 if [ "$Isadmin" = "ON" ]; then
 uis="${COLOR1}Premium User$NC"
 else
@@ -295,7 +221,7 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "$COLOR1 ${NC}                ${WH}• TARAP KUHING •${NC}                 $COLOR1 $NC"
 echo -e "$COLOR1 ${NC}                 ${WH}• SEWA SCRIPT •${NC}                 $COLOR1 $NC"
 echo -e "$COLOR1 ${NC}                  ${WH}• PREMIUM •${NC}                    $COLOR1 $NC"
-echo -e "$COLOR1 ${NC}             ${WH}• WA : 085754292950 •${NC}             $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}             ${WH}• WA : 085k •${NC}             $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e ""
 echo -ne " ${WH}Select menu ${COLOR1}: ${WH}"; read opt
