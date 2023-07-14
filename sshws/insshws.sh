@@ -2,16 +2,16 @@
 # Proxy For Edukasi & Imclass
 
 # Link Hosting Kalian
-CASPER="raw.githubusercontent.com/casper9/perv1/main/install"
+RMBL="raw.githubusercontent.com/Hunterscrip/perv1/main/install"
 
-wget -O /usr/local/bin/ws-dropbear https://raw.githubusercontent.com/casper9/perv1/main/sshws/ws-dropbear
+wget -O /usr/local/bin/ws-dropbear https://raw.githubusercontent.com/Hunterscrip/perv1/main/sshws/ws-dropbear
 chmod +x /usr/local/bin/ws-dropbear
 
 # Installing Service
 cat > /etc/systemd/system/ws-nontls.service << END
 [Unit]
-Description=Python Proxy Mod By C A S P E R
-Documentation=https://t.me/CasperGaming
+Description=Python Proxy Mod By RMBL VPN 
+Documentation=https://t.me/rmbl
 After=network.target nss-lookup.target
 
 [Service]
@@ -32,14 +32,14 @@ systemctl enable ws-dropbear.service
 systemctl start ws-dropbear.service
 systemctl restart ws-dropbear.service
 
-wget -O /usr/local/bin/ws-ovpn https://raw.githubusercontent.com/casper9/perv1/main/sshws/ws-ovpn.py
+wget -O /usr/local/bin/ws-ovpn https://raw.githubusercontent.com/Hunterscrip/perv1/main/sshws/ws-ovpn.py
 chmod +x /usr/local/bin/ws-ovpn
 
 # Installing Service
 cat > /etc/systemd/system/ws-ovpn.service << END
 [Unit]
-Description=Python Proxy Mod By C A S P E R
-Documentation=https://t.me/CasperGaming
+Description=Python Proxy Mod By RMBL 
+Documentation=https://t.me/rmblvpn
 After=network.target nss-lookup.target
 
 [Service]
@@ -59,14 +59,14 @@ systemctl daemon-reload
 systemctl enable ws-ovpn
 systemctl restart ws-ovpn
 
-wget -O /usr/local/bin/ws-stunnel https://raw.githubusercontent.com/casper9/perv1/main/sshws/ws-stunnel
+wget -O /usr/local/bin/ws-stunnel https://raw.githubusercontent.com/Hunterscrip/perv1/main/sshws/ws-stunnel
 chmod +x /usr/local/bin/ws-stunnel
 
 # Installing Service
 cat > /etc/systemd/system/ws-stunnel.service << END
 [Unit]
-Description=Python Proxy Mod By C A S P E R
-Documentation=https://t.me/CasperGaming
+Description=Python Proxy Mod By rmblvpn
+Documentation=https://t.me/rmblvpn
 After=network.target nss-lookup.target
 
 [Service]
