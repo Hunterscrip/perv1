@@ -12,13 +12,13 @@ LIGHT='\033[0;37m'
 # ==========================================
 # Getting
 MYIP=$(wget -qO- ipinfo.io/ip);
-IZIN=$( curl https://raw.githubusercontent.com/casper9/permission/main/ipmini | grep $MYIP )
+IZIN=$( curl https://raw.githubusercontent.com/Hunterscrip/izinvps/main/ip | grep $MYIP )
 if [ $MYIP = $MYIP ]; then
 echo -e "${NC}${GREEN}Permission Accepted...${NC}"
 else
 echo -e "${NC}${RED}Permission Denied!${NC}";
 echo -e "${NC}${LIGHT}Please Contact Admin!!"
-echo -e "${NC}${LIGHT}Telegram : https://t.me/CasperGaming"
+echo -e "${NC}${LIGHT}Telegram : https://t.me/rmblvpn"
 exit 0
 fi
 clear
@@ -42,7 +42,7 @@ echo -e "${tyblue}|●⏩ Vless WS none TLS       : 80 ⏪               |${NC}"
 echo -e "${tyblue}|●⏩ Trojan WS none TLS      : 80 ⏪               |${NC}"
 echo -e "${tyblue}|●⏩ Shadowsocks WS none TLS : 80 ⏪               |${NC}"
 echo -e "${tyblue}|━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━|${NC}"
-echo -e "${tyblue}|            ♡ SCRIPT BY C A S P E R              |${NC}"
+echo -e "${tyblue}|             SCRIPT BY RMBL VPN             |${NC}"
 echo -e "${tyblue}|━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━|${NC}"
 echo -e ""
 read -p " Select menu : " opt
