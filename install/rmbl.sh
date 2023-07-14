@@ -6,10 +6,10 @@ apt install jq curl -y
 DOMAIN=kuhing.my.id
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c5)
 #subsl=$(</dev/urandom tr -dc a-z0-9 | head -c5)
-dns=${sub}.kuhing.my.id
-#NS_dns=slowdns-${subsl}.kuhing.my.id
-CF_ID=merahjambo@gmail.com
-CF_KEY=86431de017f7bf317c3960061da2f87c8effb
+dns=${sub}.rmblvpn.xyz
+#NS_dns=slowdns-${subsl}.rmblvpn.xyz
+CF_ID=kadeknovi148@gmail.com
+CF_KEY=0acb39278825f08e3ceaba41c1169cde"
 set -euo pipefail
 IP=$(wget -qO- icanhazip.com);
 echo "Updating DNS for ${dns}..."
