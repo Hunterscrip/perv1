@@ -1,6 +1,6 @@
 #!/bin/bash
 # Ohp Script
-# Mod By CasperGaming
+# Mod By hunter
 # ==========================================
 # Color
 RED='\033[0;31m'
@@ -47,7 +47,7 @@ END
 cat > /etc/systemd/system/dropbear-ohp.service << END
 [Unit]]
 Description=Dropbear OHP Redirection Service
-Documentation=https://t.me/CasperGaming
+Documentation=https://t.me/rmblvpn
 After=network.target nss-lookup.target
 
 [Service]
