@@ -1,35 +1,5 @@
 #!/bin/bash
-MYIP=$(wget -qO- ipinfo.io/ip);
-echo "Checking VPS"
-CEKEXPIRED () {
-    today=$(date -d +1day +%Y-%m-%d)
-    Exp1=$(curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/Profile/main/Profile/permission/ip | grep $MYIP | awk '{print $3}')
-    if [[ $today < $Exp1 ]]; then
-    echo -e "\e[32mSTATUS SCRIPT AKTIF...\e[0m"
-    else
-    echo -e "\e[31mSCRIPT ANDA EXPIRED!\e[0m";
-    echo -e "\e[31mRenew IP Anda Chat Saya okay? WA: 0857542292950 #\e[0m"
-    exit 0
-fi
-}
-IZIN=$(curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/Profile/main/Profile/permission/ip | awk '{print $4}' | grep $MYIP)
-if [ $MYIP = $IZIN ]; then
-echo -e "\e[32mPermission Accepted...\e[0m"
-CEKEXPIRED
-else
-echo -e "\e[31mPermission Denied!\e[0m";
-echo -e "\e[31mDaftarkan IP Chat Saya okay? WA: 085754292950, Kalau Sudah daftar Tinggal Menikmati Hasil ya hehe... #\e[0m"
-exit 0
-fi
-clear
-if [ ! -e /usr/local/bin/reboot_otomatis ]; then
-echo '#!/bin/bash' > /usr/local/bin/reboot_otomatis
-echo 'tanggal=$(date +"%m-%d-%Y")' >> /usr/local/bin/reboot_otomatis
-echo 'waktu=$(date +"%T")' >> /usr/local/bin/reboot_otomatis
-echo 'echo "Server successfully rebooted on the date of $tanggal hit $waktu." >> /root/log-reboot.txt' >> /usr/local/bin/reboot_otomatis
-echo '/sbin/shutdown -r now' >> /usr/local/bin/reboot_otomatis
-chmod +x /usr/local/bin/reboot_otomatis
-fi
+
 clear
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "\e[0;100;33m       • AUTO-REBOOT MENU BY TARAP KUHING •        \e[0m"
@@ -77,7 +47,7 @@ elif test $x -eq 8; then
 if [ ! -e /root/log-reboot.txt ]; then
 	clear
     echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo -e "\e[0;100;33m        • AUTO-REBOOT LOG BY TARAP KUHING •        \e[0m"
+    echo -e "\e[0;100;33m        • AUTO-REBOOT LOG BY RMBL VPN •        \e[0m"
     echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo -e ""
     echo "No reboot activity found"
@@ -89,7 +59,7 @@ if [ ! -e /root/log-reboot.txt ]; then
 	else
 	clear
     echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo -e "\e[0;100;33m        • AUTO-REBOOT LOG BY TARAP KUHING •        \e[0m"
+    echo -e "\e[0;100;33m        • AUTO-REBOOT LOG  •        \e[0m"
     echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo -e ""
 	echo 'LOG REBOOT'
@@ -103,7 +73,7 @@ fi
 elif test $x -eq 9; then
 clear
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "\e[0;100;33m        • AUTO-REBOOT LOG BY TARAP KUHING •        \e[0m"
+echo -e "\e[0;100;33m        • AUTO-REBOOT LOG •        \e[0m"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e ""
 echo "" > /root/log-reboot.txt
