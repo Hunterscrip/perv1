@@ -1,6 +1,6 @@
 [Unit]
-Description=Python Proxy Mod By CASPER
-Documentation=https://t.me/CasperGaming
+Description=Python Proxy Mod By rmbl
+Documentation=https://t.me/rmblvpn
 After=network.target nss-lookup.target
 
 [Service]
