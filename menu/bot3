@@ -16,7 +16,7 @@ else
 fi
 UUID=$(tr </dev/urandom -dc a-z | head -c8)
 echo -e "   ┌──────────────────────────────────────────┐\033[0m"
-echo -e "   │\033[0m\033[101m        BOT SIMPLE FTVPN TELEGRAM         \033[0m|\033[0m"
+echo -e "   │\033[0m\033[101m        BOT SIMPLE RMBL VPN TELEGRAM         \033[0m|\033[0m"
 echo -e "   └──────────────────────────────────────────┘\033[0m"
 echo -e "            Telegram Bot Setup menu"
 echo -e "          make vpn in the telegram bot"
@@ -31,7 +31,7 @@ echo -e ""
 read -e -p "Input your Bot Token : " TOKET
 read -e -p "Input your Id Telegram : " IDTELE
 rm -rf /etc/ftvpn/database.db
-cat >/etc/ftvpn/var.txt <<EOF
+cat >/etc/rmblvpn/var.txt <<EOF
 echo "$TOKET" > /etc/per/token
 echo "$IDTELE" > /etc/per/id
 BOT_TOKEN="$TOKET"
@@ -84,7 +84,7 @@ ssssssssssss() {
      sleep 2
 }
 echo -e "   ┌──────────────────────────────────────────┐\033[0m"
-echo -e "   │\033[0m\033[101m       🤖  FIGHTER TUNNEL BOT   🤖        \033[0m|\033[0m"
+echo -e "   │\033[0m\033[101m       🤖  Rmbl BOT   🤖        \033[0m|\033[0m"
 echo -e "   └──────────────────────────────────────────┘\033[0m"
 echo -e ""
 echo -e "Menyiapkan BOT Telegram"
