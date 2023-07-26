@@ -21,16 +21,16 @@ DATE=$(date +%m/%d/%Y)
 DATE2=$(date -R | cut -d " " -f -5)
 IPVPS=$(curl -s ipinfo.io/ip?token=7578ac19afd785 )
 MYIP=$(curl -sS ipv4.icanhazip.com)
-Isadmin=$(curl -sS https://raw.githubusercontent.com/Hunterscrip/permission/main/ipmini | grep $MYIP | awk '{print $5}')
-Exp2=$(curl -sS https://raw.githubusercontent.com/Hunterscrip/permission/main/ipmini | grep $MYIP | awk '{print $3}')
+Isadmin=$(curl -sS https://raw.githubusercontent.com/Hunterscrip/izinvps/main/ipmini | grep $MYIP | awk '{print $5}')
+Exp2=$(curl -sS https://raw.githubusercontent.com/Hunterscrip/izinvps/main/ipmini | grep $MYIP | awk '{print $3}')
 export RED='\033[0;31m'
 export GREEN='\033[0;32m'
 
-Name=$(curl -sS https://raw.githubusercontent.com/Hunterscrip/permission/main/ipmini | grep $MYIP | awk '{print $2}')
+Name=$(curl -sS https://raw.githubusercontent.com/Hunterscrip/izinvps/main/ipmini | grep $MYIP | awk '{print $2}')
 ipsaya=$(curl -sS ipinfo.io/ip)
 data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 date_list=$(date +"%Y-%m-%d" -d "$data_server")
-data_ip="https://raw.githubusercontent.com/Hunterscrip/permission/main/ipmini"
+data_ip="https://raw.githubusercontent.com/Hunterscrip/izinvps/main/ipmini"
 checking_sc() {
     useexp=$(curl -sS $data_ip | grep $ipsaya | awk '{print $3}')
     if [[ $date_list < $useexp ]]; then
@@ -202,7 +202,7 @@ sleep 2
 ./install_up.sh
 rm /root/install_up.sh
 rm /opt/.ver
-version_up=$( curl -sS https://raw.githubusercontent.com/Hunterscrip/permission/main/versi)
+version_up=$( curl -sS https://raw.githubusercontent.com/Hunterscrip/izinvps/main/versi)
 echo "$version_up" > /opt/.verecho "$version_up" > /opt/.ver
 echo -e "$COLOR1 ${NC}  $COLOR1[INFO]${NC} Successfully Up To Date!"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
