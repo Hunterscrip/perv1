@@ -68,21 +68,6 @@ apt install git curl -y >/dev/null 2>&1
 apt install python -y >/dev/null 2>&1
 echo -e "[ ${green}INFO${NC} ] Alright good ... installation file is ready"
 sleep 2
-echo -ne "[ ${green}INFO${NC} ] Check permission : "
-
-PERMISSION
-if [ -f /home/needupdate ]; then
-red "Your script need to update first !"
-exit 0
-elif [ "$res" = "Permission Accepted..." ]; then
-green "Permission Accepted!"
-else
-red "Permission Denied!"
-rm setup.sh > /dev/null 2>&1
-sleep 2
-exit 0
-fi
-sleep 2
 rm -rf /etc/per
 mkdir -p /etc/{vmess,websocket,vless,trojan,shadowsocks}
 mkdir -p /etc/rehanvip/public_html
