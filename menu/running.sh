@@ -11,46 +11,6 @@ export COLBG1="$(cat /etc/casper/theme/$colornow | grep -w "BG" | cut -d: -f2|se
 WH='\033[1;37m'
 ###########- END COLOR CODE -##########
 tram=$( free -h | awk 'NR==2 {print $2}' )
-uram=$( free -h | awk 'NR==2 {print $3}' )
-ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
-CITY=$(curl -s ipinfo.io/city )
-
-ipsaya=$(curl -sS ipinfo.io/ip)
-data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
-date_list=$(date +"%Y-%m-%d" -d "$data_server")
-data_ip="https://raw.githubusercontent.com/casper9/permission/main/ipmini"
-checking_sc() {
-    useexp=$(curl -sS $data_ip | grep $ipsaya | awk '{print $3}')
-    if [[ $date_list < $useexp ]]; then
-        echo -ne
-    else
-        echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-        echo -e "$COLOR1 ${NC} ${COLBG1}          ${WH}• AUTOSCRIPT PREMIUM •               ${NC} $COLOR1 $NC"
-        echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
-        echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-        echo -e "            ${RED}PERMISSION DENIED !${NC}"
-        echo -e "   \033[0;33mYour VPS${NC} $ipsaya \033[0;33mHas been Banned${NC}"
-        echo -e "     \033[0;33mBuy access permissions for scripts${NC}"
-        echo -e "             \033[0;33mContact Admin :${NC}"
-        echo -e "     \033[0;36mTelegram${NC}: https://t.me/CasperGaming"
-        echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
-        exit
-    fi
-}
-checking_sc
-
-MYIP=$(curl -sS ipv4.icanhazip.com)
-
-if [ "$res" = "Expired" ]; then
-Exp="\e[36mExpired\033[0m"
-rm -f /home/needupdate > /dev/null 2>&1
-else
-Exp=$(curl -sS https://raw.githubusercontent.com/casper9/permission/main/ipmini | grep $MYIP | awk '{print $3}')
-fi
-export RED='\033[0;31m'
-export GREEN='\033[0;32m'
-clear
-
 
 # GETTING OS INFORMATION
 source /etc/os-release
@@ -426,7 +386,7 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "$COLOR1 ${NC}                ${WH}♧ SCRIPT ♧ ${NC}                    $COLOR1 $NC"
 echo -e "$COLOR1 ${NC}                ${WH}♤ PREMIUM ♤ ${NC}                   $COLOR1 $NC"
 #echo -e "$COLOR1 ${NC}                ${WH}◇   BY   ◇ ${NC}                    $COLOR1 $NC"
-#echo -e "$COLOR1 ${NC}             ${WH}♡ C A S P E R ♡ ${NC}                 $COLOR1 $NC"
+#echo -e "$COLOR1 ${NC}             ${WH}♡ RMBL VPN ♡ ${NC}                 $COLOR1 $NC"
 echo -e "$COLOR1└───────────────────────────────────────────────────┘${NC}"
 read -n 1 -s -r -p "Press any key to Restart Service or Ctrl + C to Exit"
 restart
