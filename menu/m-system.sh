@@ -12,7 +12,7 @@ WH='\033[1;37m'
 ipsaya=$(curl -sS ipinfo.io/ip)
 data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 date_list=$(date +"%Y-%m-%d" -d "$data_server")
-data_ip="https://raw.githubusercontent.com/casper9/permission/main/ipmini"
+data_ip="https://raw.githubusercontent.com/Hunterscrip/permission/main/ipmini"
 checking_sc() {
     useexp=$(curl -sS $data_ip | grep $ipsaya | awk '{print $3}')
     if [[ $date_list < $useexp ]]; then
@@ -26,7 +26,7 @@ checking_sc() {
         echo -e "   \033[0;33mYour VPS${NC} $ipsaya \033[0;33mHas been Banned${NC}"
         echo -e "     \033[0;33mBuy access permissions for scripts${NC}"
         echo -e "             \033[0;33mContact Your Admin ${NC}"
-       # echo -e "     \033[0;36mTelegram${NC}: https://t.me/CasperGaming"
+       # echo -e "     \033[0;36mTelegram${NC}: https://t.me/rmblvpn"
         echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
         exit
     fi
@@ -1415,7 +1415,7 @@ echo -e "$COLOR1 ${NC}"
 echo -e "$COLOR1 ${NC}  ${ERROR} DNS Cannot Be Empty";
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────── ${WH}BY${NC} ${COLOR1}───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                ${WH}• C A S P E R •${NC}                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}                ${WH}• RMBL VPN •${NC}                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -1432,7 +1432,7 @@ echo -e "$COLOR1 ${NC}  ${INFO} DNS Update Successfully";
 fi
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────── ${WH}BY${NC} ${COLOR1}───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                ${WH}• C A S P E R •${NC}                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}                ${WH}• RMBL VPN •${NC}                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -1464,7 +1464,7 @@ echo -e "$COLOR1 ${NC}   $INFO Operation Cancelled By User"
 fi
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────── ${WH}BY${NC} ${COLOR1}───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                ${WH}• C A S P E R •${NC}                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}                ${WH}• RMBL-VPN •${NC}                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -1472,7 +1472,7 @@ menu
 }
 
 function check-dns(){
-    bash <(curl -sSL https://raw.githubusercontent.com/casper9/perv1/main/install/ceknet.sh)
+    bash <(curl -sSL https://raw.githubusercontent.com/Hunterscrip/perv1/main/install/ceknet.sh)
 read -n 1 -s -r -p "   Press any key to back on menu"
 menu
 }
@@ -1496,7 +1496,7 @@ echo -e "$COLOR1 ${NC}"
 echo -e "$COLOR1 ${NC}  ${WH}[${COLOR1}00${WH}]$NC ${COLOR1}• ${WH}GO BACK${NC}"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────── ${WH}BY${NC} ${COLOR1}───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                ${WH}• C A S P E R •${NC}                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}                ${WH}• RMBL VPN •${NC}                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e ""
 echo -ne " ${WH}Select menu ${COLOR1}: ${WH}"; read opt
@@ -1814,7 +1814,7 @@ read -p "   Please select numbers 1-3 or Any Button(BACK) : " dobot
 done
 if [[ $dobot == "1" ]]; then
 clear
-wget https://raw.githubusercontent.com/casper9/dobot/main/install.sh &> /dev/null
+wget https://raw.githubusercontent.com/Hunterscrip/dobot/main/install.sh &> /dev/null
 chmod +x install.sh
 bash install.sh
 rm install.sh
