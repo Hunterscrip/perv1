@@ -12,7 +12,7 @@ WH='\033[1;37m'
 ipsaya=$(curl -sS ipinfo.io/ip)
 data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 date_list=$(date +"%Y-%m-%d" -d "$data_server")
-data_ip="https://raw.githubusercontent.com/Hunterscrip/permission/main/ipmini"
+data_ip="https://raw.githubusercontent.com/casper9/permission/main/ipmini"
 checking_sc() {
     useexp=$(curl -sS $data_ip | grep $ipsaya | awk '{print $3}')
     if [[ $date_list < $useexp ]]; then
@@ -26,7 +26,7 @@ checking_sc() {
         echo -e "   \033[0;33mYour VPS${NC} $ipsaya \033[0;33mHas been Banned${NC}"
         echo -e "     \033[0;33mBuy access permissions for scripts${NC}"
         echo -e "             \033[0;33mContact Your Admin ${NC}"
-       # echo -e "     \033[0;36mTelegram${NC}: https://t.me/rmblvpn"
+       # echo -e "     \033[0;36mTelegram${NC}: https://t.me/CasperGaming"
         echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
         exit
     fi
@@ -98,6 +98,10 @@ res5() {
 wget https://raw.githubusercontent.com/casper9/perv1/main/install/casper3.sh && chmod +x casper3.sh && ./casper3.sh
 clear
 }
+res6() {
+wget https://raw.githubusercontent.com/casper9/perv1/main/install/casper4.sh && chmod +x casper4.sh && ./casper4.sh
+clear
+}
 clear
 echo -e "$COLOR1┌──────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1│ ${WH}Please select a your Choice to Set Domain              ${NC}"
@@ -145,9 +149,11 @@ echo -e "$COLOR1│  "
 echo -e "$COLOR1│  [ 3 ]  \033[1;37mDomain xxx.slowapp.cfd       ${NC}"
 echo -e "$COLOR1│  "                                        
 echo -e "$COLOR1│  [ 4 ]  \033[1;37mDomain xxx.slowapp.dev     ${NC}"
+echo -e "$COLOR1│  "                                        
+echo -e "$COLOR1│  [ 5 ]  \033[1;37mDomain xxx.vpnvip.tech     ${NC}"
 echo -e "$COLOR1└──────────────────────────────────────────┘${NC}"
-until [[ $domain2 =~ ^[1-4]+$ ]]; do 
-read -p "   Please select numbers 1 sampai 4 : " domain2
+until [[ $domain2 =~ ^[1-5]+$ ]]; do 
+read -p "   Please select numbers 1 sampai 5 : " domain2
 done
 if [[ $domain2 == "1" ]]; then
 clear
@@ -166,7 +172,7 @@ sleep 1
 fun_bar 'res1'
 fun_bar 'res2'
 clear
-rm /root/subdomainx
+rm -rf /root/subdomainx
 fi
 if [[ $domain2 == "2" ]]; then
 clear
@@ -185,7 +191,7 @@ sleep 1
 fun_bar 'res3'
 fun_bar 'res2'
 clear
-rm /root/subdomainx
+rm -rf /root/subdomainx
 fi
 if [[ $domain2 == "3" ]]; then
 clear
@@ -204,7 +210,7 @@ sleep 1
 fun_bar 'res4'
 fun_bar 'res2'
 clear
-rm /root/subdomainx
+rm -rf /root/subdomainx
 fi
 if [[ $domain2 == "4" ]]; then
 clear
@@ -223,7 +229,26 @@ sleep 1
 fun_bar 'res5'
 fun_bar 'res2'
 clear
-rm /root/subdomainx
+rm -rf /root/subdomainx
+fi
+if [[ $domain2 == "5" ]]; then
+clear
+echo -e  "$COLOR1┌──────────────────────────────────────────┐${NC}"
+echo -e  "$COLOR1│  \033[1;37mContoh subdomain xxx.vpnvip.tech        $COLOR1│${NC}"
+echo -e  "$COLOR1│    \033[1;37mxxx jadi subdomain kamu               $COLOR1│${NC}"
+echo -e  "$COLOR1└──────────────────────────────────────────┘${NC}"
+echo " "
+until [[ $dn4 =~ ^[a-zA-Z0-9_.-]+$ ]]; do
+read -rp "Masukan subdomain kamu Disini tanpa spasi : " -e dn5
+done
+echo "$dn5" > /etc/xray/domain
+echo "$dn5" > /root/subdomainx
+cd
+sleep 1
+fun_bar 'res6'
+fun_bar 'res2'
+clear
+rm -rf /root/subdomainx
 fi
 read -n 1 -s -r -p "  Press any key to Renew Cert or Ctrl + C to Exit"
 certv2ray
@@ -1415,7 +1440,7 @@ echo -e "$COLOR1 ${NC}"
 echo -e "$COLOR1 ${NC}  ${ERROR} DNS Cannot Be Empty";
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────── ${WH}BY${NC} ${COLOR1}───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                ${WH}• RMBL VPN •${NC}                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}                ${WH}• C A S P E R •${NC}                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -1432,7 +1457,7 @@ echo -e "$COLOR1 ${NC}  ${INFO} DNS Update Successfully";
 fi
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────── ${WH}BY${NC} ${COLOR1}───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                ${WH}• RMBL VPN •${NC}                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}                ${WH}• C A S P E R •${NC}                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -1464,7 +1489,7 @@ echo -e "$COLOR1 ${NC}   $INFO Operation Cancelled By User"
 fi
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────── ${WH}BY${NC} ${COLOR1}───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                ${WH}• RMBL-VPN •${NC}                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}                ${WH}• C A S P E R •${NC}                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -1472,7 +1497,7 @@ menu
 }
 
 function check-dns(){
-    bash <(curl -sSL https://raw.githubusercontent.com/Hunterscrip/perv1/main/install/ceknet.sh)
+    bash <(curl -sSL https://raw.githubusercontent.com/casper9/perv1/main/install/ceknet.sh)
 read -n 1 -s -r -p "   Press any key to back on menu"
 menu
 }
@@ -1496,7 +1521,7 @@ echo -e "$COLOR1 ${NC}"
 echo -e "$COLOR1 ${NC}  ${WH}[${COLOR1}00${WH}]$NC ${COLOR1}• ${WH}GO BACK${NC}"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────── ${WH}BY${NC} ${COLOR1}───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                ${WH}• RMBL VPN •${NC}                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}                ${WH}• C A S P E R •${NC}                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e ""
 echo -ne " ${WH}Select menu ${COLOR1}: ${WH}"; read opt
@@ -1814,25 +1839,47 @@ read -p "   Please select numbers 1-3 or Any Button(BACK) : " dobot
 done
 if [[ $dobot == "1" ]]; then
 clear
-wget https://raw.githubusercontent.com/Hunterscrip/dobot/main/install.sh &> /dev/null
+wget https://raw.githubusercontent.com/casper9/dobot/main/install.sh &> /dev/null
 chmod +x install.sh
 bash install.sh
-rm install.sh
+rm -rf install.sh
 fi
 if [[ $dobot == "2" ]]; then
 clear
 if [[ -e /etc/dobot ]]; then
+echo -ne
+else
+echo -e " SILAHKAN INSTALL DULU BOT CREATE AKUN DIGITAL OCEAN NYA"
+read -n 1 -s -r -p "Press any key to back on menu"
+m-system
+fi
 until [[ $dobot2 =~ ^[0-9]+$ ]]; do 
 read -p "   SILAHKAN TULIS COPY BOTNYA CONTOH 1 atau 3 : " dobot2
 done
+
+if [[ -e /etc/dobot${dobot2} ]]; then
+echo -e "Angka Copyan Sudah ADA Silahkan tulis Angka yg lain"
+read -n 1 -s -r -p "Press any key to back on menu"
+m-system
+fi
+
 cp -r /etc/dobot /etc/dobot${dobot2}
 read -e -p "[*] Input your Nama Store : " nama
 read -e -p "[*] Input your Bot Token : " bottoken
 read -e -p "[*] Input Your Id Telegram :" admin
 
-sed -i "s/NAMA STORE/$nama/g" /etc/dobot${dobot2}/config.json &> /dev/null
-sed -i "s/BOT TOKEN/$bottoken/g" /etc/dobot${dobot2}/config.json &> /dev/null
-sed -i "s/ID TELEGRAM/$admin/g" /etc/dobot${dobot2}/config.json &> /dev/null
+rm -rf /etc/dobot${dobot2}/config.json
+
+cat > /etc/dobot${dobot2}/config.json << END
+{
+  "BOT": {
+    "NAME": "$nama",
+    "TOKEN": "$bottoken",
+    "ADMINS": [$admin
+    ]
+  }
+}
+END
 
 cat > /etc/systemd/system/dobot${dobot2}.service << END
 [Unit]
@@ -1850,12 +1897,8 @@ END
 
 systemctl enable dobot${dobot2}
 systemctl start dobot${dobot2}
+systemctl restart dobot${dobot2}
 echo -e "SILAHKAN KETIK /start di botnya"
-else
-echo -e " SILAHKAN INSTALL DULU BOT CREATE AKUN DIGITAL OCEAN NYA"
-sleep 1
-dobot
-fi
 fi
 if [[ $dobot == "3" ]]; then
 if [[ -e /etc/cron.d/bantwidth ]]; then
@@ -1904,7 +1947,7 @@ echo -e "  ${WH}[${COLOR1}06${WH}]${NC} ${COLOR1}• ${WH}INSTALL TCP BBR ${WH} 
 #echo -e " $COLOR1 $NC                                              ${NC} $COLOR1 $NC"
 echo -e "  ${WH}[${COLOR1}07${WH}]${NC} ${COLOR1}• ${WH}GANTI TEMA WARNA${WH}    ${WH}[${COLOR1}15${WH}]${NC} ${COLOR1}• ${WH}BOT DIGITAL OCEAN MENU ${WH}   $COLOR1 $NC"
 #echo -e " $COLOR1 $NC                                              ${NC} $COLOR1 $NC"
-echo -e "  ${WH}[${COLOR1}08${WH}]${NC} ${COLOR1}• ${WH}LIMIT SPEED SERVER"
+echo -e "  ${WH}[${COLOR1}08${WH}]${NC} ${COLOR1}• ${WH}LIMIT SPEED${WH}         ${WH}[${COLOR1}16${WH}]${NC} ${COLOR1}• ${WH}BOT CREATE AKUN MENU ${WH}   $COLOR1 $NC" 
 echo -e " $COLOR1 $NC                                              ${NC} $COLOR1 $NC"
 echo -e " $COLOR1 $NC                                              ${NC} $COLOR1 $NC"
 echo -e "  ${WH}[${COLOR1}00${WH}]${NC} ${COLOR1}• ${WH}GO BACK $NC         ${WH}[${COLOR1}99${WH}]${NC} ${COLOR1}• ${WH}CLEAR RAM CACHE ${WH}    $COLOR1 $NC"
